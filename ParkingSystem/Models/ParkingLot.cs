@@ -51,7 +51,7 @@ namespace ParkingSystem.Models
                     idExists = true;
                     Console.WriteLine("Type how many hours you left your car parked:");
                     int hoursParked = Convert.ToInt32(Console.ReadLine());
-                    double totalValue = Math.Round((hoursParked * 4.2 + 5), 2, MidpointRounding.AwayFromZero);
+                    double totalValue = Math.Round((hoursParked * pricePerHour + initialPrice), 2, MidpointRounding.AwayFromZero);
                     cars.Remove(cars[i]);
                     Console.WriteLine($"The vehicle '{verifyId}' was removed and the total payment was: R$ {totalValue:0.00}");
                 }
