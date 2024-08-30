@@ -14,7 +14,7 @@ Console.WriteLine("Agora digite o preço por hora:");
 pricePerHour = Convert.ToDouble(Console.ReadLine());
 
 // Instancia a classe Estacionamento, já com os valores obtidos anteriormente
-Estacionamento es = new Estacionamento(initialPrice, pricePerHour);
+ParkingLot parkingLot = new ParkingLot(initialPrice, pricePerHour);
 
 string option = string.Empty;
 bool showMenu = true;
@@ -32,15 +32,15 @@ while (showMenu)
     switch (Console.ReadLine())
     {
         case "1":
-            es.AddCar();
+            parkingLot.AddCar();
             break;
 
         case "2":
-            es.RemoveCar();
+            parkingLot.RemoveCar();
             break;
 
         case "3":
-            es.ListCars();
+            parkingLot.ListCars();
             break;
 
         case "4":
@@ -53,7 +53,7 @@ while (showMenu)
     }
 
     Console.WriteLine("Pressione uma tecla para continuar");
-    Console.ReadLine();
+    Console.ReadKey();
 }
 
 Console.WriteLine("O programa se encerrou");

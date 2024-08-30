@@ -7,50 +7,22 @@ namespace ParkingSystem.Models
 {
     public class Car
     {
-        private int id { get; set; }
-        private string model { get; set; }
-        private string color { get; set; }
-        private string parkingSlot { get; set; }
+        public int Id { get; private set; }
+        private string Model { get; set; }
+        private string Color { get; set; }
+        private string ParkingSlot { get; set; }
 
-        public Car(int id, string model, string color, string parkingSlot)
+        public Car(int carId, string model, string color, string parkingSlot)
         {
-            this.id = id;
-            this.model = model;
-            this.color = color;
-            this.parkingSlot = parkingSlot;
+            Id = carId;
+            Model = model;
+            Color = color;
+            ParkingSlot = parkingSlot;
         }
 
-        public int Id
+        public override string ToString()
         {
-            get { return id; }
-            set
-            {
-                id = value;
-            }
-        }
-        public string Model
-        {
-            get { return model; }
-            set
-            {
-                model = value;
-            }
-        }
-        public string Color
-        {
-            get { return color; }
-            set
-            {
-                color = value;
-            }
-        }
-        public string Slot
-        {
-            get { return parkingSlot; }
-            set
-            {
-                parkingSlot = value;
-            }
+            return $"ID: {Id}, Model: {Model}, Color: {Color}, ParkingSlot: {ParkingSlot}";
         }
     }
 }
