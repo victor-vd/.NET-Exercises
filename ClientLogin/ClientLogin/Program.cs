@@ -4,19 +4,36 @@
 Client cleber = new Client();
 Client felipe = new Client();
 
-Console.WriteLine(File.ReadAllLines("Assets/cleber.txt"));
+string[]? lines = null;
 
-cleber.Name = File.ReadAllLines("Assets/cleber.txt")[0];
-cleber.Birthday = File.ReadAllLines("Assets/cleber.txt")[1];
-cleber.Email = File.ReadAllLines("Assets/cleber.txt")[2];
-cleber.Password = File.ReadAllLines("Assets/cleber.txt")[3];
+try
+{
+    lines = File.ReadAllLines("ClienLogin/Assets/cleber.txt");
+}
+catch (FileNotFoundException)
+{
+    Console.WriteLine("file not found");
+}
+catch (DirectoryNotFoundException)
+{
+    Console.WriteLine("directory not found");
+}
+finally
+{
+    Console.WriteLine("The file was found sucessfully");
+}
+
+cleber.Name = lines[0];
+cleber.Birthday = lines[1];
+cleber.Email = lines[2];
+cleber.Password = lines[3];
 
 cleber.Check();
 
-cleber.Name = "cleber glauco";
+/* cleber.Name = "cleber glauco";
 cleber.Birthday = "2005/08/19";
 
-cleber.Check();
+cleber.Check(); */
 
 
 felipe.Name = "felipe rocha";
@@ -26,8 +43,8 @@ felipe.Password = "AYV&GHF*)Evb7¨*(&R)";
 
 felipe.Check();
 
-felipe.Name = "felipe glauco";
+/* felipe.Name = "felipe glauco";
 felipe.Birthday = "2002/04/14";
 
-felipe.Check();
+felipe.Check(); */
 
