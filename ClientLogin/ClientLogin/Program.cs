@@ -4,11 +4,12 @@
 Client cleber = new Client();
 Client felipe = new Client();
 
+Console.WriteLine(File.ReadAllLines("Assets/cleber.txt"));
 
-cleber.Name = "cleber rocha";
-cleber.Birthday = "1998/12/23";
-cleber.Email = "cleber1123123213111@gmail.com";
-cleber.Password = "QAeBaefUE*¨&fV*)EÄbv)*VB";
+cleber.Name = File.ReadAllLines("Assets/cleber.txt")[0];
+cleber.Birthday = File.ReadAllLines("Assets/cleber.txt")[1];
+cleber.Email = File.ReadAllLines("Assets/cleber.txt")[2];
+cleber.Password = File.ReadAllLines("Assets/cleber.txt")[3];
 
 cleber.Check();
 

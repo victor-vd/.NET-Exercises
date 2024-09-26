@@ -28,6 +28,7 @@ namespace ClientLogin.Components
         }
         public void Check()
         {
+            //  This is called interpolation
             Console.WriteLine($"\nName: {name}\nAge: {age}\nBirthday: {birthday}\nEmail: {email}\nPassword: {password}\n");
         }
         public string Name

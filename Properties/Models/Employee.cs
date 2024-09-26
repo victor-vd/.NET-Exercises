@@ -4,14 +4,14 @@ namespace Models.Employee
 {
     public class Employee
     {
-        private string _nome;
+        private string _name;
         public string Name
         {
-            get => this._nome;
+            get => this._name;
 
             set
             {
-                this._nome = value;
+                this._name = value;
             }
         }
         private int _age;
