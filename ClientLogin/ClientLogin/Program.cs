@@ -1,45 +1,22 @@
 ﻿using ClientLogin.Components;
 
 //16, "cleber glauco", "11/01/2000"
-Client cleber = new Client();
-Client felipe = new Client();
+Client cleber = new Client("Cleber Rocha");
+Client felipe = new Client("Felipe Rocha");
 
-string[]? lines = null;
+Queue<Client> queue = new Queue<Client>();
 
-try
-{
-    lines = File.ReadAllLines("ClienLogin/Assets/cleber.txt");
-}
-catch (FileNotFoundException)
-{
-    Console.WriteLine("file not found");
-}
-catch (DirectoryNotFoundException)
-{
-    Console.WriteLine("directory not found");
-}
-finally
-{
-    Console.WriteLine("The file was found sucessfully");
-}
+string[] lines = cleber.getClientFile();
 
-cleber.Name = lines[0];
-cleber.Birthday = lines[1];
-cleber.Email = lines[2];
-cleber.Password = lines[3];
+cleber.Birthday = lines[0];
+cleber.Email = lines[1];
+cleber.Password = lines[2];
 
 cleber.Check();
 
-/* cleber.Name = "cleber glauco";
-cleber.Birthday = "2005/08/19";
-
-cleber.Check(); */
-
-
-felipe.Name = "felipe rocha";
-felipe.Birthday = "1978/11/13";
-felipe.Email = "felipe1123123111@gmail.com";
-felipe.Password = "AYV&GHF*)Evb7¨*(&R)";
+felipe.Birthday = lines[0];
+felipe.Email = lines[1];
+felipe.Password = lines[2];
 
 felipe.Check();
 

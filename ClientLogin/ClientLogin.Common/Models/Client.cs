@@ -17,10 +17,10 @@ namespace ClientLogin.Components
         private string password { get; set; }
         private int[] birthdayArr = new int[3];
 
-        public Client()
+        public Client(string clientName)
         {
             currentDate = [now.Year, now.Month, now.Day];
-            name = "";
+            this.name = clientName;
             age = 0;
             birthday = "";
             email = "";
@@ -76,6 +76,43 @@ namespace ClientLogin.Components
                     password = value;
                 }
             }
+        }
+        public string[] getClientFile()
+        {
+            string[] lines = [];
+            bool isValid = false;
+
+            try
+            {
+                lines = File.ReadAllLines($"ClientLogin/Assets/{this.name.ToLower().Replace(" ", "_")}.txt");
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("File not found");
+            }
+            catch (DirectoryNotFoundException)
+            {
+                Console.WriteLine("Directory not found");
+            }
+            finally
+            {
+                Console.WriteLine("The file was found sucessfully");
+            }
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                if (lines[i] != "")
+                {
+                    isValid = true;
+                }
+            }
+
+            if (!isValid)
+            {
+                throw new Exception("Blank files are not allowed");
+            }
+
+            return lines;
         }
     }
 }
