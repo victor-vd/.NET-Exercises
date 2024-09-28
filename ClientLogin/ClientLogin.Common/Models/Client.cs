@@ -7,7 +7,9 @@ namespace ClientLogin.Components
 {
     public class Client
     {
-
+        Dictionary<string, string> countryCode = File.ReadAllLines("ClientLogin/Assets/Dictionary/country_code.txt")
+                                                .Select(x => x.Split(" = "))
+                                                .ToDictionary(x => x[0], x => x[1]);
         DateTime now = DateTime.Now;
         public int[] currentDate = new int[3];
         private string name { get; set; }
@@ -15,6 +17,7 @@ namespace ClientLogin.Components
         private string birthday { get; set; }
         private string email { get; set; }
         private string password { get; set; }
+        private string country { get; set; }
         private int[] birthdayArr = new int[3];
 
         public Client(string clientName)
@@ -25,11 +28,12 @@ namespace ClientLogin.Components
             birthday = "";
             email = "";
             password = "";
+            country = "";
         }
-        public void Check()
+        public override string ToString()
         {
             //  This is called interpolation
-            Console.WriteLine($"\nName: {name}\nAge: {age}\nBirthday: {birthday}\nEmail: {email}\nPassword: {password}\n");
+            return $"\nName: {name}\nAge: {age}\nBirthday: {birthday}\nCountry: {country}\nEmail: {email}\nPassword: {password}\n";
         }
         public string Name
         {
@@ -77,14 +81,19 @@ namespace ClientLogin.Components
                 }
             }
         }
+        public string Country
+        {
+            get { return country; }
+            set { country = countryCode[value.ToUpper()]; }
+        }
         public string[] getClientFile()
         {
             string[] lines = [];
-            bool isValid = false;
+            bool isValid = true;
 
             try
             {
-                lines = File.ReadAllLines($"ClientLogin/Assets/{this.name.ToLower().Replace(" ", "_")}.txt");
+                lines = File.ReadAllLines($"ClientLogin/Assets/Clients/{this.name.ToLower().Replace(" ", "_")}.txt");
             }
             catch (FileNotFoundException)
             {
@@ -96,20 +105,20 @@ namespace ClientLogin.Components
             }
             finally
             {
-                Console.WriteLine("The file was found sucessfully");
+                Console.WriteLine($"The file {this.name.ToLower().Replace(" ", "_")}.txt was found sucessfully");
             }
 
             for (int i = 0; i < lines.Length; i++)
             {
-                if (lines[i] != "")
+                if (lines[i] == "")
                 {
-                    isValid = true;
+                    isValid = false;
                 }
             }
 
             if (!isValid)
             {
-                throw new Exception("Blank files are not allowed");
+                throw new Exception("Blank fields are not allowed");
             }
             if (lines[0] == this.name || lines[0] == this.name.ToLower())
             {
