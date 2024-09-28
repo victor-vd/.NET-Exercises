@@ -1,23 +1,22 @@
 ﻿using ClientLogin.Components;
 
-//16, "cleber glauco", "11/01/2000"
+//Queue<Client> queue = new Queue<Client>();
+List<string[]> clientFiles = new List<string[]>();
+
 Client cleber = new Client("Cleber Rocha");
 Client felipe = new Client("Felipe Rocha");
 
-Queue<Client> queue = new Queue<Client>();
+clientFiles.Add(cleber.getClientFile());
+clientFiles.Add(felipe.getClientFile());
 
-string[] lines = cleber.getClientFile();
-
-cleber.Birthday = lines[0];
-cleber.Email = lines[1];
-cleber.Password = lines[2];
-
+cleber.Birthday = clientFiles[0][0];
+cleber.Email = clientFiles[0][1];
+cleber.Password = clientFiles[0][2];
 cleber.Check();
 
-felipe.Birthday = lines[0];
-felipe.Email = lines[1];
-felipe.Password = lines[2];
-
+felipe.Birthday = clientFiles[1][0];
+felipe.Email = clientFiles[1][1];
+felipe.Password = clientFiles[1][2];
 felipe.Check();
 
 /* felipe.Name = "felipe glauco";

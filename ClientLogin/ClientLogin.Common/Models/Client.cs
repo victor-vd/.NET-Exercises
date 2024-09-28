@@ -111,6 +111,10 @@ namespace ClientLogin.Components
             {
                 throw new Exception("Blank files are not allowed");
             }
+            if (lines[0] == this.name || lines[0] == this.name.ToLower())
+            {
+                throw new Exception("The name must be specified in the intialization of the client");
+            }
 
             return lines;
         }
