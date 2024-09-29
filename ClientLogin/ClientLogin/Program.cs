@@ -1,6 +1,6 @@
 ﻿using ClientLogin.Components;
 
-//Queue<Client> queue = new Queue<Client>();
+// Creates a list of all the client data that will be requested
 List<string[]> clientFiles = new List<string[]>();
 
 Client cleber = new Client("Cleber Rocha");

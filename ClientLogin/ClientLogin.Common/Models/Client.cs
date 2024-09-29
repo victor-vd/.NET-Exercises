@@ -7,6 +7,8 @@ namespace ClientLogin.Components
 {
     public class Client
     {
+        // Get the keys and the value from the file country_code.txt
+        // Any changes to the dictionary must be done in that file
         Dictionary<string, string> countryCode = File.ReadAllLines("ClientLogin/Assets/Dictionary/country_code.txt")
                                                 .Select(x => x.Split(" = "))
                                                 .ToDictionary(x => x[0], x => x[1]);
@@ -55,6 +57,7 @@ namespace ClientLogin.Components
             get { return birthday; }
             set
             {
+                // Parsing the date
                 birthday = value;
                 birthdayArr = Array.ConvertAll(birthday.Split("/"), int.Parse);
                 age = (uint)(now.Year - birthdayArr[0]);
@@ -91,6 +94,7 @@ namespace ClientLogin.Components
             string[] lines = [];
             bool isValid = true;
 
+            // Get the data of the client from the file with their name
             try
             {
                 lines = File.ReadAllLines($"ClientLogin/Assets/Clients/{this.name.ToLower().Replace(" ", "_")}.txt");
@@ -108,6 +112,7 @@ namespace ClientLogin.Components
                 Console.WriteLine($"The file {this.name.ToLower().Replace(" ", "_")}.txt was found sucessfully");
             }
 
+            // Check if there is any issue on the data provided
             for (int i = 0; i < lines.Length; i++)
             {
                 if (lines[i] == "")
@@ -115,7 +120,6 @@ namespace ClientLogin.Components
                     isValid = false;
                 }
             }
-
             if (!isValid)
             {
                 throw new Exception("Blank fields are not allowed");
