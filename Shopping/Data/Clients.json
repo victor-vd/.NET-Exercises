@@ -1,0 +1,50 @@
+[
+    {
+        "Name": "John Doe",
+        "Age": 0,
+        "Birthday": "10/05/1992",
+        "Email": "john.doe@gmail.com",
+        "Password": "Jd#2023secure",
+        "Country": "US"
+    },
+    {
+        "Name": "Emily Smith",
+        "Age": 0,
+        "Birthday": "22/09/1995",
+        "Email": "emily.smith@hotmail.com",
+        "Password": "EmS!Secure2023",
+        "Country": "CA"
+    },
+    {
+        "Name": "Michael Johnson",
+        "Age": 0,
+        "Birthday": "15/07/1979",
+        "Email": "m.johnson@yahoo.com",
+        "Password": "Mj1979$Pass",
+        "Country": "US"
+    },
+    {
+        "Name": "Sophia Williams",
+        "Age": 0,
+        "Birthday": "30/11/2000",
+        "Email": "sophia.williams@outlook.com",
+        "Password": "Sophia2000#",
+        "Country": "FR"
+    },
+    {
+        "Name": "Daniel Brown",
+        "Age": 0,
+        "Birthday": "17/02/1986",
+        "Email": "daniel.brown@icloud.com",
+        "Password": "DB1986_Safe!",
+        "Country": "IT"
+    },
+    {
+        "Name": "Olivia Davis",
+        "Age": 0,
+        "Birthday": "03/04/1997",
+        "Email": "olivia.davis@gmail.com",
+        "Password": "Oliv@Davis97",
+        "Country": "BR"
+    }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "Code": 13574134,
+    "Price": 122.99,
+    "Tax": 40.8,
+    "Name": "Peristaltic Pump"
+  },
+  {
+    "Code": 28493021,
+    "Price": 59.99,
+    "Tax": 20.5,
+    "Name": "Stainless Steel Water Bottle"
+  },
+  {
+    "Code": 59438219,
+    "Price": 899.0,
+    "Tax": 650.0,
+    "Name": "Wireless Noise-Cancelling Headphones"
+  },
+  {
+    "Code": 98347213,
+    "Price": 29.99,
+    "Tax": 10.0,
+    "Name": "Ergonomic Mouse Pad"
+  },
+  {
+    "Code": 47293184,
+    "Price": 1499.99,
+    "Tax": 1050.75,
+    "Name": "4K Ultra HD Smart TV"
+  },
+  {
+    "Code": 38109234,
+    "Price": 79.99,
+    "Tax": 35.0,
+    "Name": "Bluetooth Speaker"
+  },
+  {
+    "Code": 65782034,
+    "Price": 49.99,
+    "Tax": 25.0,
+    "Name": "Smart LED Light Bulb"
+  },
+  {
+    "Code": 91457382,
+    "Price": 249.99,
+    "Tax": 180.0,
+    "Name": "Smartwatch with GPS and Heart Monitor"
+  }
+]
